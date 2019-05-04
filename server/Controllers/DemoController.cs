@@ -2,26 +2,26 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace server.Controllers
 {
-    public class DemoController : Controller
+    public class DemoController : BaseController
     {
-        [HttpGet("/products")]
-        public ActionResult<string> ListProducts()
+        // GET api/demo
+        [HttpGet]
+        public ActionResult<string> List()
         {
-            return "ListProducts";
+            return "A List";
         }
 
-        [Route("")]
-        [Route("Demo")]
-        [Route("Demo/Index")]
-        public ActionResult<string> Index()
+        // GET /api/demo/7
+        [HttpGet("{id:int}")]
+        public ActionResult<string> Get(int id)
         {
-            return "Index";
+            return "An item";
         }
 
-        [Route("Demo/About")]
-        public ActionResult<string> About()
+        //POST /api/demo
+        public ActionResult<string> Post()
         {
-            return "About";
+            return "Post";
         }
     }
 }
