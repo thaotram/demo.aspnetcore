@@ -4,21 +4,29 @@ namespace server.Controllers
 {
     public class DemoController : BaseController
     {
-        // GET api/demo
+        /// <summary>
+        /// Get A List of Post
+        /// </summary>
         [HttpGet]
         public ActionResult<string> List()
         {
             return "A List";
         }
 
-        // GET /api/demo/7
+        /// <summary>
+        /// Get a Post
+        /// </summary>
+        /// <param name="id">Post Id</param>
         [HttpGet("{id:int}")]
         public ActionResult<string> Get(int id)
         {
             return "An item";
         }
 
-        //POST /api/demo
+        /// <summary>
+        /// Create a new Post
+        /// </summary>
+        [HttpPost]
         public ActionResult<string> Post()
         {
             return "Post";
