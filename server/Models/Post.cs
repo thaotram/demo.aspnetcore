@@ -1,9 +1,10 @@
 using System;
 using Realms;
+using server.Models.Interfaces;
 
 namespace server.Models
 {
-    public class Post : RealmObject
+    public class Post : RealmObject, IModelHasId
     {
         [PrimaryKey]
         public int Id { get; set; }
