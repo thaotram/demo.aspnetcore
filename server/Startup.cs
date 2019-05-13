@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using server.DataAccesses.Base;
 
 namespace server
 {
@@ -37,6 +38,7 @@ namespace server
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                RealmDatabase.Config.ShouldDeleteIfMigrationNeeded = true;
             }
 
             app.UseSwagger();
